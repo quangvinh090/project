@@ -138,15 +138,8 @@
 	</div>
 </div>
 <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#contact').click(function(){ 
-		if( !empty($error[])){
-		alert('Your messages was successfully')
-	}
-	})
-})
-</script>
+
+
 
 @endsection
 

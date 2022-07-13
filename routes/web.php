@@ -26,10 +26,16 @@ Route::prefix('user')->name('user.')->group(function () {
 
         Route::get('Contact',[HomeController::class, 'Contact'])->name('Contact');
         Route::post('store',[HomeController::class, 'store'])->name('store');
+        
 
     });
 });
-Route::get('/lien-he', 'Frontend\FrontendController@contact')->name('frontend.contact');
+
+
+Route::get('/takemail/{id}',[HomeController::class,'sentEmail'])->name('sentEmail');
+
+
+
         
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::prefix('category')->name('category.')->group(function(){
@@ -47,6 +53,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::prefix('contact')->name('contact.')->group(function(){
         Route::get('/',[ContactController::class, 'index'])->name('index');
         Route::get('index',[ContactController::class, 'index'])->name('index');
-        Route::get('delete/{id}',[CategoryController::class, 'delete'])->name('delete')->where('id', '[0-9]+');
+        Route::get('delete/{id}',[ContactController::class, 'delete'])->name('delete')->where('id', '[0-9]+');
     });
 });
